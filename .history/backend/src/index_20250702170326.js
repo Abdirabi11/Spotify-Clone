@@ -30,11 +30,10 @@ app.use(cors({
     credentials: true
   }))
 
-//   origin: process.env.FRONTEND_URL || 'https://spotify-clone-front-gilt.vercel.app',
-//     credentials: true,
-
 app.use(express.json() )// to parse req.body
 app.use(clerkMiddleware({
+    // Optional but recommended
+    // Add debug to see logs
     debug: true
   }));
 app.use(fileUpload({

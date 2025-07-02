@@ -30,13 +30,8 @@ app.use(cors({
     credentials: true
   }))
 
-//   origin: process.env.FRONTEND_URL || 'https://spotify-clone-front-gilt.vercel.app',
-//     credentials: true,
-
 app.use(express.json() )// to parse req.body
-app.use(clerkMiddleware({
-    debug: true
-  }));
+app.use(clerkMiddleware()) // this will add auth o req obj => req.auth.userId
 app.use(fileUpload({
     useTempFiles: true,
     tempFileDir: path.join(__dirname, 'tmp'),

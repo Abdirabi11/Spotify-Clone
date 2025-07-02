@@ -26,12 +26,9 @@ const httpServer= createServer(app)
 initializeSocket(httpServer)
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL || '*',
-    credentials: true
+    origin: process.env.FRONTEND_URL || 'https://spotify-clone-front-gilt.vercel.app',
+    credentials: true,
   }))
-
-//   origin: process.env.FRONTEND_URL || 'https://spotify-clone-front-gilt.vercel.app',
-//     credentials: true,
 
 app.use(express.json() )// to parse req.body
 app.use(clerkMiddleware({
